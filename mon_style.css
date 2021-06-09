@@ -1,0 +1,937 @@
+@font-face {font-family: "ClearviewHwy1B.ttf";src: url("../fonts/ClearviewHwy1B.ttf");}
+@font-face {font-family: "ClearviewHwy1W.ttf";src: url("../fonts/ClearviewHwy1W.ttf");}
+@font-face {font-family: "ClearviewHwy2B.ttf";src: url("../fonts/ClearviewHwy2B.ttf");}
+@font-face {font-family: "ClearviewHwy2W.ttf";src: url("../fonts/ClearviewHwy2W.ttf");}
+@font-face {font-family: "ClearviewHwy3B.ttf";src: url("../fonts/ClearviewHwy3B.ttf");}
+@font-face {font-family: "ClearviewHwy3W.ttf";src: url("../fonts/ClearviewHwy3W.ttf");}
+@font-face {font-family: "ClearviewHwy4B.ttf";src: url("../fonts/ClearviewHwy4B.ttf");}
+@font-face {font-family: "ClearviewHwy4W.ttf";src: url("../fonts/ClearviewHwy4W.ttf");}
+@font-face {font-family: "ClearviewHwy5B.ttf";src: url("../fonts/ClearviewHwy5B.ttf");}
+@font-face {font-family: "ClearviewHwy5W.ttf";src: url("../fonts/ClearviewHwy5W.ttf");}
+@font-face {font-family: "ClearviewHwy6B.ttf";src: url("../fonts/ClearviewHwy6B.ttf");}
+@font-face {font-family: "ClearviewHwy6W.ttf";src: url("../fonts/ClearviewHwy6W.ttf");}
+
+body{
+	margin:0;
+	padding:0;
+	font-family: Verdana, sans-serif;
+	background-color: #fff;
+	overflow:hidden;
+	/*width:200vw;*/
+}
+ul,li,h1,h2,h3,h4,p{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.part{
+	/*border:1px solid black;*/
+	background-color:white;
+}
+	.part h3,
+	.part h4,
+	.part h4 a {
+		color:#933;
+	}
+#toc{
+	display:block;
+	padding:10px;
+	position:relative;
+	margin:15px 0;
+	float:left;
+	width:305px;
+}
+	#toc h3{
+		padding-bottom:10px;
+	}
+	#toc h3 strong{
+		font-size:13px;
+		color:black;
+	}
+
+#links{
+	border:1px solid black;
+	width:100%;
+	padding:10px;
+	float:right;
+	margin-top:-30px;
+}
+	#links h3{
+		color:#933;
+	}
+	#links ul{
+		padding: 8px 0 3px 20px;
+	}
+	#links li{
+		list-style-type:circle;
+	}
+
+	
+	#toc li, #links li{
+		list-style-type:circle;
+		padding-left:5px;
+		margin-left:15px;
+	}
+
+	.section h3{
+		margin-bottom:10px;
+		margin-left: 8px;
+	}
+	.section h4{
+		margin:10px 0 10px 8px;
+	}
+	.section li{
+		float:left;
+	}
+	.pane{
+		
+		overflow:hidden;
+		
+		
+		position:relative;
+		width:100vw;
+		height:100vh;
+	}
+ul.elements{
+	
+	display:grid;
+	grid-template-columns: repeat(2, 1fr);
+	height:60vh; 
+	width:60vw;
+}
+	ul.elements li{
+		width:80vw;
+		height:60vh;
+		font-weight:bolder;
+		text-align:center;
+		padding:50px;
+		position:relative;
+		background-color:#DDD;
+	}
+		ul.elements li a{
+			/*bottom:20px;*/
+			color:#933;
+			font-size:12px;
+			left:125px;
+			position:absolute;
+		}
+		ul.elements li p{
+			color:#666;
+		}
+
+ul.links{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+	height:20px;
+	overflow:hidden;
+	padding-left: 5px;
+}
+	ul.links a{
+		margin:0 0 0 5px;
+	}
+.clear{
+	clear:left;
+}
+h3 span{
+	position:absolute;			
+}
+.message{
+	background:#EEE;
+	border:1px solid #999;
+	color:#333;
+	font-size:12px;
+	font-weight:normal;
+	padding:1px;
+	margin-top:2px;
+}
+
+h1{
+	color:#5B739C;
+}
+h1 strong{
+	font-size:13px;
+	color:#777;
+}
+
+/* Navigation */
+
+body div .links  {
+    width: 100%;
+    background: rgba(0,0,0,0.8);    
+    padding: 1% 0%;
+}
+
+body div .links li {
+    width: 24.9%;
+    text-align: center;
+}
+
+body div .links li:nth-child(-n+3) {
+
+    border-right: 1px solid white;
+}
+
+body div .links li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'ClearviewHwy5B.ttf';
+    font-size: 20px;
+}
+
+body div .links li a:hover {
+    color: #4a8b4b;
+}
+
+/* ---- FIN Navigation ---- */
+
+/* Responsive Navigation */
+
+#menu-responsive{
+		display: none;
+        width: 100%;
+    background: rgba(0,0,0,0.8);    
+    padding: 1% 0%;
+    height: 20px;
+    z-index: 1;
+	}
+
+#menu-responsive li {
+		width: 24.9%;
+    text-align: center;
+	}
+
+#menu-responsive li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'ClearviewHwy5B.ttf';
+    font-size: 20px;
+}
+
+#menu-responsive li a:hover {
+    color: #4a8b4b;
+
+}
+
+#menu-responsive2{
+		display: none;
+        width: 100%;
+    background: rgba(0,0,0,0.8);    
+    padding: 1% 0%;
+    height: 20px;
+    z-index: 1;
+	}
+
+#menu-responsive2 li {
+		width: 24.9%;
+    text-align: center;
+	}
+
+#menu-responsive2 li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'ClearviewHwy5B.ttf';
+    font-size: 20px;
+}
+
+#menu-responsive2 li a:hover {
+    color: #4a8b4b;
+
+}
+
+/* ---- FIN Responsive Navigation ---- */
+
+/* Accueil */
+
+#zero {
+    background-image: url(img/maps/modeles1.png);
+    background-size: 100% 100%;
+}
+
+#zero img:first-child {
+    position: absolute;
+    left: 45%;
+    bottom: 53%;
+}
+
+#zero img:nth-child(2) {
+    position: absolute;
+    left: 12%;
+    bottom: 35%;
+}
+
+.off {
+    display: none;
+}
+
+/* ----- FIN Accueil ----- */
+
+/* Mon histoire */
+
+#un {
+    background-image: url(img/maps/modeles2.png);
+    background-size: 100% 100%;
+}
+
+#un img {
+    position: absolute;
+    left: 74%;
+    bottom: 12%;
+    cursor: pointer;
+}
+
+#un img:nth-child(2) {
+    position: absolute;
+    left: 40%;
+    bottom: 45%;
+}
+
+/* Modale 1 */
+
+.modale1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: rgba(0,0,0,0.5);
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.modale1 .container {
+    background: white;
+    width: 70%;
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-top: 100%;
+    margin-bottom: 5%;
+    
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 55%, rgb(89, 134, 91) 37% );
+}
+
+.modale1 div > img:nth-child(1) {
+    background: transparent;
+    width: auto;
+    cursor: pointer;
+    position: fixed;
+    right: 20%;
+}
+
+.modale1 div > img:nth-child(2) {
+    width: 30%;
+    margin: 0% 35%;
+}
+
+.modale1 article {
+    width: 100%;
+    clear: left;
+    margin-top: 10%;
+}
+
+.modale1 article section {
+    width: 50%;
+    float: left;
+}
+
+.modale1 article section img{
+    width: 80%;
+    margin: 0% 10%;
+}
+
+.modale1 article section p{
+    font-family: 'ClearviewHwy2W.ttf';
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* ---- FIN modale1 ----- */
+
+/* Carrousel - acteurs */
+
+/*Carrousel */
+
+
+
+.modale1 section:nth-child(5) {
+	margin-top: 5%;
+   }
+
+section:nth-child(5) > div{
+	margin-bottom: 5%;
+   }
+   
+   section:nth-child(5) .carousel-items{
+	width: 100%;
+	 height: 30em;
+	 margin-left: auto;
+	 margin-right: auto;
+	 background:none;
+	 display: flex;
+	 align-items: center;
+   
+   }
+   
+.modale1 section:nth-child(5) > div:first-child {
+	   background-image: url(img/donald.png);
+	   background-repeat: no-repeat;
+	   background-size: cover;
+	   clear: left;
+   }
+   
+ .modale1  section:nth-child(5) .slidershow{
+	 width: 80%;
+       margin: 0% 10%;
+	 height: auto;
+	 overflow: hidden;
+   }
+   
+ .modale1  section:nth-child(5) .slides{
+	 width: 100%;
+	 height: auto;
+	 display: flex;
+   }
+   
+ .modale1  section:nth-child(5) .navigation{
+	 display: flex;
+	 width: 100%;
+   max-height:100%;
+	 margin: auto;
+	   align-items: center;
+	 justify-content: center;
+   }
+   
+ .modale1  section:nth-child(5) .bare{
+	 width: 10px;
+	 height: 10px;
+	 border: 2px solid white;
+	 border-radius: 50%;
+	 margin: 6px;
+	 cursor: pointer;
+	 transition: 0.4s;
+   }
+  .modale1 section:nth-child(5) .bare:hover{
+	 background: white;
+   }
+   
+ .modale1  section:nth-child(5) input[name="r"]{
+	   position: absolute;
+	   visibility: hidden;
+   }
+   
+.modale1   section:nth-child(5) .slides{
+	 width: 500%;
+	 height: auto;
+	 display: flex;
+   }
+   
+  .modale1 section:nth-child(5) .slides div img{
+	 width: 50%;
+   }
+   
+  .modale1 section:nth-child(5) .slidershow .slides p:nth-child(2) {
+	   font-size: 24px;
+	   margin: 3% 0% 8% 0%;
+	   font-family: 'ClearviewHwy6W.ttf';
+       color: white;
+       text-align: center;
+       
+   }
+   
+ .modale1  section:nth-child(5) .slidershow .slides p:nth-child(3) {
+	   font-size: 18px;
+	   margin: 3% 0%;
+       font-family: 'ClearviewHwy3W.ttf';
+       color: white;
+   }
+   
+ .modale1  section:nth-child(5) .slide2{
+	 width: 20%;
+	 transition: 0.6s;
+   }
+   
+ .modale1  section:nth-child(5) .slide3{
+	 width: 20%;
+	 transition: 0.6s;
+   }
+   
+ .modale1  section:nth-child(5) .slide{
+	 width: 20%;
+	 transition: 0.6s;
+   }
+   
+ .modale1  section:nth-child(5) .navigation {
+   }
+   
+   #r1:checked ~ .s1{
+	 margin-left: 0;
+   }
+   #r2:checked ~ .s1{
+	 margin-left: -20%;
+   }
+   #r3:checked ~ .s1{
+	 margin-left: -40%;
+   }
+   #r4:checked ~ .s1{
+	 margin-left: -60%;
+   }
+   #r5:checked ~ .s1{
+	 margin-left: -80%;
+   }
+   
+   .picture{
+	 width: 30%;
+   }
+   
+  .modale1 main section:nth-child(7) > div:first-child {
+	   background-image: url(img/donald.png);
+	   background-repeat: no-repeat;
+	   background-size: cover;
+	   clear: left;
+	   margin-bottom: 5%;
+   }
+   
+.slide .imgBox {
+		 height: 300px;
+		 background: url(./img/james.png) no-repeat;
+		 background-size: contain;
+		 background-position:center;
+	   }
+   
+   .slide2 .imgBox {
+		 height: 300px;
+		 background: url(./img/donald.png) no-repeat;
+		 background-size: contain;
+		 background-position:center;
+	   }
+   
+
+/* ---- FIN caroussel ---- */
+
+/* ---- FIN Modale 1 ---- */
+
+/* ---- FIN Mon histoire ---- */
+
+/* Panneaux */
+
+#deux {
+    background-image: url(img/maps/modeles3.png);
+    background-size: 100% 100%;
+}
+
+#deux img {
+    position: absolute;
+    left: 52%;
+    bottom: 50%;
+    cursor: pointer;
+}
+
+#deux img:nth-child(2) {
+    position: absolute;
+    left: 15%;
+    bottom: 45%;
+}
+
+/* Modale 2 */
+
+.modale2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: rgba(0,0,0,0.5);
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.modale2 .container {
+    background: white;
+    width: 70%;    
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-top: 70%;
+    margin-bottom: 5%;
+
+}
+
+.modale2 div > img:nth-child(1) {
+    background: transparent;
+    width: auto;
+    float: right;
+    cursor: pointer;
+    margin: 3% 3% 0% 0%;
+    position: fixed;
+    right: 20%;
+}
+
+.modale2 div > img:nth-child(2) {
+    width: 50%;
+    margin: 0% 25% 5% 25%;
+}
+
+.modale2 div > img:nth-child(2) {
+    width: 30%;
+    margin: 0% 35%;
+}
+
+.modale2 div article:nth-child(3) {
+    width: 60%;
+    margin: 5% 20% 0% 20%;
+}
+
+.modale2 div article:nth-child(3) section:nth-child(2) {
+    font-family: 'ClearviewHwy2W.ttf';
+    text-align: center;
+    margin: 5%;
+}
+
+.modale2 div article:nth-child(3) section img {
+    width: 100%;
+}
+
+:root {
+  --base-color: #559658;
+  --hover-color: black;
+}
+
+.visibilite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+    left: 56%;
+    top: 145%;
+  width: 250px;
+  height: 90px;
+  margin: 20px;
+  border: 5px solid var(--base-color);
+  font-size: 1rem;
+  cursor: pointer;
+    border-radius: 10px;
+}
+.visibilite > .text {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--hover-color) 0%, var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+  background-repeat: repeat;
+  background-size: 200%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 300ms;
+    font-family: 'ClearviewHwy6W.ttf';
+    text-align: center;
+    
+}
+.visibilite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--base-color);
+  transform-origin: 100% 0;
+  transform: scale3d(0, 1, 1);
+  transition: transform 300ms;
+}
+.visibilite:hover .text {
+  background-position: 0 0;
+}
+.visibilite:hover::before {
+  transform-origin: 0 0;
+  transform: scale3d(1, 1, 1);
+}
+
+
+.modale2 div article:nth-child(4) {
+    margin-bottom: 5%;
+}
+
+.modale2 div article:nth-child(4) img {
+    width: 100%;
+}
+
+.modale2 div article:nth-child(5) {
+    width: 100%;
+}
+
+.modale2 div article:nth-child(5) section {
+    float: left;
+    width: 40%;
+    padding: 5%;
+}
+
+.modale2 div article:nth-child(5) section:first-child img {
+    width: 100%;
+    border: 2px solid #559658;
+}
+
+.modale2 div article:nth-child(5) section:nth-child(2) p {
+    margin: 20% 0%;
+    font-family: 'ClearviewHwy3W.ttf';
+}
+
+
+/* ---- FIN Panneaux ----- */
+
+/* Observons */
+
+#trois {
+    background-image: url(img/maps/modeles4.png);
+    background-size: 100% 100%;
+}
+
+#trois img {
+    position: absolute;
+    left: 25%;
+    bottom: 40%;
+    cursor: pointer;
+}
+
+#trois img:nth-child(2) {
+    position: absolute;
+    left: 40%;
+    bottom: 45%;
+}
+
+.modale3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: rgba(0,0,0,0.5);
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll
+}
+
+.modale3 .container {
+    background: white;
+    width: 70%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-top: 130%;
+    margin-bottom: 5%;
+}
+
+.modale3 div > img:nth-child(1) {
+    background: transparent;
+    width: auto;
+    float: right;
+    cursor: pointer;
+    margin: 3% 3% 0% 0%;
+    position: fixed;
+    right: 20%;
+}
+
+.modale3 div > img:nth-child(2) {
+    width: 50%;
+    margin: 5% 25% 5% 25%;
+}
+
+.modale3 div article section   {
+    width: 100%;
+}
+
+.modale3 div article section:first-child img  {
+    width: 100%;
+}
+
+.modale3 div article section:nth-child(2)  {
+    width: 50%;
+    margin: 0% 25%;
+    font-family: 'ClearviewHwy2W.ttf';
+}
+
+.modale3 div article section:nth-child(4) img  {
+    width: 100%;
+}
+
+.modale3 div article section:nth-child(5)  {
+    text-align: center;
+    margin: 8% 0%;
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(odd)  {
+    font-size: 20px;
+}
+
+.modale3 div article section:nth-child(5) p:first-child  {
+    font-family: 'ClearviewHwy2W.ttf';
+    font-size: 15px;
+    margin-bottom: 5%;
+    color : #559658;
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(even)  {
+    font-family: 'ClearviewHwy2w.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(3)  {
+    font-family: 'ClearviewHwy1B.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(5)  {
+    font-family: 'ClearviewHwy2B.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(7)  {
+    font-family: 'ClearviewHwy3B.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(9)  {
+    font-family: 'ClearviewHwy4B.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(11)  {
+    font-family: 'ClearviewHwy5B.ttf';
+}
+
+.modale3 div article section:nth-child(5) p:nth-child(13)  {
+    font-family: 'ClearviewHwy6B.ttf';
+}
+
+.modale3 div article section:nth-child(6) {  
+    width: 80%;
+    padding: 0% 10%;
+    height: 300px;
+    background-color: #559658;
+    border-radius: 0px 0px 30px 30px;
+    overflow: hidden;
+}
+
+.modale3 div article section:nth-child(6) input {
+     -webkit-appearance: none;
+    outline: none;
+    color: #069;
+    background: #CCC;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 2em;
+}
+
+.modale3 div article section:nth-child(6) input::-webkit-slider-runnable-track {
+    height: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;  /* supprimé définie sur l'input */
+}
+
+.modale3 div article section:nth-child(6) input {
+    height: 2em;
+  color: #77d879;
+  background: transparent;
+  background-image: linear-gradient(to bottom, #234223, black, #234223);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 25%;
+    margin: 2% 0%;
+}
+
+.modale3 div article section:nth-child(6) input::-webkit-slider-thumb {
+   -webkit-appearance: none;       /* également nécessaire sur le curseur */
+  width: 1em;
+  height: inherit;                /* s'adapte à la hauteur de l'input */
+  border: none;
+  border-radius: 100px;               /* pris en compte sur Webkit et Edge */
+  background: currentColor;       /* pris en compte sur Webkit only */
+}
+
+.modale3 div article section:nth-child(6) textarea {
+  border: none;
+    max-width: 100%;
+    width: 100%;
+    font-family: 'ClearviewHwy6W.ttf';
+    outline: none;
+    resize: none;
+    background-color: transparent;
+}
+
+
+
+/* ---- FIN Observons ---- */
+
+#titre {
+    position: fixed;
+    bottom: 0;
+    margin: 1%;
+    font-size: 40px;
+    font-family: 'ClearviewHwy6W.ttf';
+}
+
+.open{
+    display: flex;
+}
+
+.active {
+    font-size: 10px;
+}
+
+.modale2 article:nth-child(6) {
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.modale2 article:nth-child(6) #svg2 {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-bottom: 5%;
+}
+
+.modale2 article:nth-child(6) #svg10344 {
+    width: 70%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.modale2 article:nth-child(6) section {
+    width: 0%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modale2 article:nth-child(6) div {
+    margin: 0% 5%;
+    
+}
+
+.modale2 article:nth-child(6) .bloc_vert{
+    height: 100px;
+    width: 200px;
+    background: white;
+    border: 6px solid #026300;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.modale2 article:nth-child(6) .bloc_gris {
+    height: 100px;
+    width: 200px;
+    background: white;
+    border: 6px solid #026300;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
